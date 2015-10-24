@@ -2,6 +2,7 @@ package ui;
 
 import rgb.InvertRGBStrategy;
 import rgb.SepiaRGBStrategy;
+import rgb.VanillaRGBStrategy;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -29,6 +30,9 @@ public class RGBWindow extends JFrame{
         JMenuItem open = new JMenuItem("Open");
         open.addActionListener(new OpenFileActionListener());
         file.add(open);
+        JMenuItem original = new JMenuItem("Original");
+        original.addActionListener(new OriginalActionListener());
+        image.add(original);
         JMenuItem invert = new JMenuItem("Invert");
         invert.addActionListener(new InvertActionListener());
         image.add(invert);
@@ -64,6 +68,14 @@ public class RGBWindow extends JFrame{
                     e.printStackTrace();
                 }
             }
+        }
+    }
+
+    private class OriginalActionListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            panel.setRGBStrategy(new VanillaRGBStrategy());
+            panel.convert();
         }
     }
 
