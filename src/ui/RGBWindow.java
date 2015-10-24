@@ -22,6 +22,18 @@ public class RGBWindow extends JFrame{
         super("jrgb");
         this.panel = new RGBPanel();
 
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (UnsupportedLookAndFeelException e) {
+            e.printStackTrace();
+        }
+
         JMenuBar menuBar = new JMenuBar();
         JMenu file = new JMenu("File");
         JMenu image = new JMenu("Image");
