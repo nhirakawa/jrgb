@@ -53,6 +53,10 @@ public class RGBWindow extends JFrame{
         sepia.addActionListener(new SepiaActionListener());
         image.add(sepia);
 
+        JMenuItem eightBit = new JMenuItem("EightBit");
+        eightBit.addActionListener(new EightBitActionListener());
+        image.add(eightBit);
+
         JMenuItem red = new JMenuItem("Red");
         red.addActionListener(new RedActionListener());
         image.add(red);
@@ -114,6 +118,14 @@ public class RGBWindow extends JFrame{
         @Override
         public void actionPerformed(ActionEvent e) {
             panel.setRGBStrategy(new SepiaRGBStrategy());
+            panel.convert();
+        }
+    }
+
+    private class EightBitActionListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent actionEvent) {
+            panel.setRGBStrategy(new EightBitRGBStrategy());
             panel.convert();
         }
     }
