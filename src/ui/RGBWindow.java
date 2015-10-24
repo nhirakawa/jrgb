@@ -1,6 +1,7 @@
 package ui;
 
 import rgb.InvertRGBStrategy;
+import rgb.SepiaRGBStrategy;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -31,6 +32,9 @@ public class RGBWindow extends JFrame{
         JMenuItem invert = new JMenuItem("Invert");
         invert.addActionListener(new InvertActionListener());
         image.add(invert);
+        JMenuItem sepia = new JMenuItem("Sepia");
+        sepia.addActionListener(new SepiaActionListener());
+        image.add(sepia);
 
         menuBar.add(file);
         menuBar.add(image);
@@ -64,13 +68,19 @@ public class RGBWindow extends JFrame{
     }
 
     private class InvertActionListener implements ActionListener{
-
         @Override
         public void actionPerformed(ActionEvent e) {
             panel.setRGBStrategy(new InvertRGBStrategy());
             panel.convert();
         }
+    }
 
+    private class SepiaActionListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            panel.setRGBStrategy(new SepiaRGBStrategy());
+            panel.convert();
+        }
     }
 
     private static class ImageFilter extends FileFilter {
