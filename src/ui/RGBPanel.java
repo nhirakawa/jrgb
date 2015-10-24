@@ -19,6 +19,7 @@ public class RGBPanel extends JPanel {
 
     public void setImage(BufferedImage img){
         this.image = img;
+        setPreferredSize(new Dimension(img.getWidth(), img.getHeight()));
         invalidate();
         repaint();
     }

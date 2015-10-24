@@ -53,6 +53,7 @@ public class RGBWindow extends JFrame{
                 try {
                     BufferedImage image = ImageIO.read(file);
                     panel.setImage(image);
+                    pack();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
