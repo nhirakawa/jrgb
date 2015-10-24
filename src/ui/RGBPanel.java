@@ -24,8 +24,6 @@ public class RGBPanel extends JPanel {
         super();
         this.converter = converter;
         setPreferredSize(new Dimension(600, 400));
-//        image = new BufferedImage(100, 100, BufferedImage.TYPE_3BYTE_BGR);
-//        originalImage = image;
     }
 
     public void setRGBStrategy(RGBStrategy strategy){
