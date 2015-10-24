@@ -1,5 +1,7 @@
 package ui;
 
+import rgb.InvertRGBStrategy;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -7,8 +9,6 @@ import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.io.File;
-import javax.swing.*;
 import javax.swing.filechooser.*;
 
 /**
@@ -28,7 +28,9 @@ public class RGBWindow extends JFrame{
         JMenuItem open = new JMenuItem("Open");
         open.addActionListener(new OpenFileActionListener());
         file.add(open);
-
+        JMenuItem invert = new JMenuItem("Invert");
+        invert.addActionListener(new InvertActionListener());
+        image.add(invert);
 
         menuBar.add(file);
         menuBar.add(image);
@@ -59,6 +61,16 @@ public class RGBWindow extends JFrame{
                 }
             }
         }
+    }
+
+    private class InvertActionListener implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            panel.setRGBStrategy(new InvertRGBStrategy());
+            panel.convert();
+        }
+
     }
 
     private static class ImageFilter extends FileFilter {
