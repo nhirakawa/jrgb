@@ -1,8 +1,6 @@
 package ui;
 
-import rgb.InvertRGBStrategy;
-import rgb.SepiaRGBStrategy;
-import rgb.VanillaRGBStrategy;
+import rgb.*;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -30,15 +28,28 @@ public class RGBWindow extends JFrame{
         JMenuItem open = new JMenuItem("Open");
         open.addActionListener(new OpenFileActionListener());
         file.add(open);
+
         JMenuItem original = new JMenuItem("Original");
         original.addActionListener(new OriginalActionListener());
         image.add(original);
+
         JMenuItem invert = new JMenuItem("Invert");
         invert.addActionListener(new InvertActionListener());
         image.add(invert);
+
         JMenuItem sepia = new JMenuItem("Sepia");
         sepia.addActionListener(new SepiaActionListener());
         image.add(sepia);
+
+        JMenuItem red = new JMenuItem("Red");
+        red.addActionListener(new RedActionListener());
+        image.add(red);
+        JMenuItem green = new JMenuItem("Green");
+        green.addActionListener(new GreenActionListener());
+        image.add(green);
+        JMenuItem blue = new JMenuItem("Blue");
+        blue.addActionListener(new BlueActionListener());
+        image.add(blue);
 
         menuBar.add(file);
         menuBar.add(image);
@@ -91,6 +102,30 @@ public class RGBWindow extends JFrame{
         @Override
         public void actionPerformed(ActionEvent e) {
             panel.setRGBStrategy(new SepiaRGBStrategy());
+            panel.convert();
+        }
+    }
+
+    private class RedActionListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            panel.setRGBStrategy(new RedRGBStrategy());
+            panel.convert();
+        }
+    }
+
+    private class GreenActionListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            panel.setRGBStrategy(new GreenRGBStrategy());
+            panel.convert();
+        }
+    }
+
+    private class BlueActionListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            panel.setRGBStrategy(new BlueRGBStrategy());
             panel.convert();
         }
     }
