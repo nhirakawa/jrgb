@@ -5,11 +5,10 @@ import java.awt.*;
 /**
  * Created by Nick on 10/23/2015.
  */
-public class VanillaRGBStrategy implements RGBStrategy{
-
+public class VanillaRGBStrategy extends RGBStrategy{
 
 	@Override
-	public Color convert(Color c) {
-		return c;
+	public int getRGB(int rgb) {
+		return rgb;
 	}
 }

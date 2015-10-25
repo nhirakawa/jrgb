@@ -31,7 +31,7 @@ public class RGBPanel extends JPanel {
     }
 
     public void convert(){
-        BufferedImage newImage = new BufferedImage(image.getWidth(), image.getHeight(), BufferedImage.TYPE_3BYTE_BGR);
+        /*BufferedImage newImage = new BufferedImage(image.getWidth(), image.getHeight(), BufferedImage.TYPE_3BYTE_BGR);
         for(int i = 0; i < originalImage.getWidth(); i++){
             for(int j = 0; j < originalImage.getHeight(); j++){
                 Color color = new Color(originalImage.getRGB(i, j));
@@ -40,6 +40,8 @@ public class RGBPanel extends JPanel {
             }
         }
         image = newImage;
+        */
+        image = converter.convert(originalImage);
         invalidate();
         repaint();
     }

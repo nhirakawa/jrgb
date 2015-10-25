@@ -5,10 +5,12 @@ import java.awt.*;
 /**
  * Created by Nick on 10/23/2015.
  */
-public class RedRGBStrategy implements RGBStrategy {
+public class RedRGBStrategy extends RGBStrategy {
+
 	@Override
-	public Color convert(Color c) {
-		int red = c.getRed();
-		return new Color(red, 0, 0);
+	public int getRGB(int rgb) {
+		Color c = new Color(rgb);
+		return new Color(c.getRed(), 0, 0).getRGB();
 	}
+
 }
