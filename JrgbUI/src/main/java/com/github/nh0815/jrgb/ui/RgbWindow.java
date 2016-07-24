@@ -1,6 +1,7 @@
-package ui;
+package com.github.nh0815.jrgb.ui;
 
-import rgb.*;
+import com.github.nh0815.jrgb.RgbConverter;
+import com.github.nh0815.jrgb.rgb.*;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -11,27 +12,20 @@ import java.io.File;
 import java.io.IOException;
 import javax.swing.filechooser.*;
 
-/**
- * Created by nick on 10/22/15.
- */
-public class RGBWindow extends JFrame{
+public class RgbWindow extends JFrame{
 
-    private RGBPanel panel;
+    private RgbPanel panel;
+    private RgbConverter converter;
 
-    public RGBWindow(){
+    public RgbWindow(){
         super("jrgb");
-        this.panel = new RGBPanel();
+        this.converter = new RgbConverter();
+        this.panel = new RgbPanel(converter);
 
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (UnsupportedLookAndFeelException e) {
-            e.printStackTrace();
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e) {
+            System.err.println("Could not set UI look and feel");
         }
 
         JMenuBar menuBar = new JMenuBar();
@@ -101,7 +95,7 @@ public class RGBWindow extends JFrame{
     private class OriginalActionListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            panel.setRGBStrategy(new VanillaRGBStrategy());
+            converter.setRgbStrategy(new IdentityRGBStrategy());
             panel.convert();
         }
     }
@@ -109,7 +103,7 @@ public class RGBWindow extends JFrame{
     private class InvertActionListener implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            panel.setRGBStrategy(new InvertRGBStrategy());
+            converter.setRgbStrategy(new InvertRGBStrategy());
             panel.convert();
         }
     }
@@ -117,7 +111,7 @@ public class RGBWindow extends JFrame{
     private class SepiaActionListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            panel.setRGBStrategy(new SepiaRGBStrategy());
+            converter.setRgbStrategy(new SepiaRGBStrategy());
             panel.convert();
         }
     }
@@ -125,7 +119,7 @@ public class RGBWindow extends JFrame{
     private class EightBitActionListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
-            panel.setRGBStrategy(new EightBitRGBStrategy());
+            converter.setRgbStrategy(new EightBitRGBStrategy());
             panel.convert();
         }
     }
@@ -133,7 +127,7 @@ public class RGBWindow extends JFrame{
     private class RedActionListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            panel.setRGBStrategy(new RedRGBStrategy());
+            converter.setRgbStrategy(new RedRGBStrategy());
             panel.convert();
         }
     }
@@ -141,7 +135,7 @@ public class RGBWindow extends JFrame{
     private class GreenActionListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            panel.setRGBStrategy(new GreenRGBStrategy());
+            converter.setRgbStrategy(new GreenRGBStrategy());
             panel.convert();
         }
     }
@@ -149,7 +143,7 @@ public class RGBWindow extends JFrame{
     private class BlueActionListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            panel.setRGBStrategy(new BlueRGBStrategy());
+            converter.setRgbStrategy(new BlueRGBStrategy());
             panel.convert();
         }
     }
