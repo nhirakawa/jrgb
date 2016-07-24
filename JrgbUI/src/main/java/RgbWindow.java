@@ -1,6 +1,4 @@
-package ui;
-
-import rgb.*;
+import com.github.nh0815.rgb.*;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -11,9 +9,6 @@ import java.io.File;
 import java.io.IOException;
 import javax.swing.filechooser.*;
 
-/**
- * Created by nick on 10/22/15.
- */
 public class RGBWindow extends JFrame{
 
     private RGBPanel panel;
@@ -24,13 +19,7 @@ public class RGBWindow extends JFrame{
 
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (UnsupportedLookAndFeelException e) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e) {
             e.printStackTrace();
         }
 

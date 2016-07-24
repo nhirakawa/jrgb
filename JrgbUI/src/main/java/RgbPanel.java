@@ -1,7 +1,3 @@
-package ui;
-
-import rgb.InvertRGBStrategy;
-import rgb.RGBStrategy;
 
 import javax.swing.*;
 import java.awt.*;
