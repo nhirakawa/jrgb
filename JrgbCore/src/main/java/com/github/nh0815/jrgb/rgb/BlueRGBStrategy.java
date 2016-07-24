@@ -1,16 +1,15 @@
-package com.github.nh0815.rgb;
+package com.github.nh0815.jrgb.rgb;
 
 import java.awt.*;
 
 /**
  * Created by Nick on 10/23/2015.
  */
-public class RedRGBStrategy extends RGBStrategy {
+public class BlueRGBStrategy extends RGBStrategy {
 
 	@Override
 	public int getRGB(int rgb) {
 		Color c = new Color(rgb);
-		return new Color(c.getRed(), 0, 0).getRGB();
+		return new Color(0, 0, c.getBlue()).getRGB();
 	}
-
 }
