@@ -1,4 +1,7 @@
 
+import com.github.nh0815.RgbConverter;
+import com.github.nh0815.rgb.RGBStrategy;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -6,37 +9,19 @@ import java.awt.image.BufferedImage;
 /**
  * Created by nick on 10/22/15.
  */
-public class RGBPanel extends JPanel {
+public class RgbPanel extends JPanel {
 
     private BufferedImage originalImage;
     private BufferedImage image;
-    private RGBStrategy converter;
+    private RgbConverter converter;
 
-    public RGBPanel(){
-        this(new InvertRGBStrategy());
-    }
-
-    public RGBPanel(RGBStrategy converter){
+    public RgbPanel(RgbConverter converter){
         super();
         this.converter = converter;
         setPreferredSize(new Dimension(600, 400));
     }
 
-    public void setRGBStrategy(RGBStrategy strategy){
-        this.converter = strategy;
-    }
-
     public void convert(){
-        /*BufferedImage newImage = new BufferedImage(image.getWidth(), image.getHeight(), BufferedImage.TYPE_3BYTE_BGR);
-        for(int i = 0; i < originalImage.getWidth(); i++){
-            for(int j = 0; j < originalImage.getHeight(); j++){
-                Color color = new Color(originalImage.getRGB(i, j));
-                color = converter.convert(color);
-                newImage.setRGB(i, j, color.getRGB());
-            }
-        }
-        image = newImage;
-        */
         image = converter.convert(originalImage);
         invalidate();
         repaint();

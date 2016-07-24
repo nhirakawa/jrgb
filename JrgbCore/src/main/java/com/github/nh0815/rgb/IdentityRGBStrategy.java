@@ -1,11 +1,9 @@
-package rgb;
-
-import java.awt.*;
+package com.github.nh0815.rgb;
 
 /**
  * Created by Nick on 10/23/2015.
  */
-public class VanillaRGBStrategy extends RGBStrategy{
+public class IdentityRGBStrategy extends RGBStrategy{
 
 	@Override
 	public int getRGB(int rgb) {

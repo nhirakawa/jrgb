@@ -1,7 +1,6 @@
-package rgb;
+package com.github.nh0815.rgb;
 
 import java.awt.*;
-import java.awt.image.BufferedImage;
 
 /**
  * Created by nick on 10/24/15.
