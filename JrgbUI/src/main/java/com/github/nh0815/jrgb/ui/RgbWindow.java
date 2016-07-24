@@ -1,3 +1,5 @@
+package com.github.nh0815.jrgb.ui;
+
 import com.github.nh0815.RgbConverter;
 import com.github.nh0815.rgb.*;
 
