@@ -34,7 +34,7 @@
         </plugins>
     </build>
     <modules>
-        <module>JrgbCore</module>
-        <module>JrgbUI</module>
+        <module>jgrb-core</module>
+        <module>jgrb-ui</module>
     </modules>
 </project>
