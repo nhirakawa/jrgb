@@ -1,6 +1,6 @@
-package com.github.nh0815.jrgb.ui;
+package com.github.nhirakawa.jrgb.ui;
 
-import com.github.nh0815.jrgb.RgbConverter;
+import com.github.nhirakawa.jrgb.RgbConverter;
 
 import javax.swing.*;
 import java.awt.*;

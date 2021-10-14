@@ -1,4 +1,4 @@
-package com.github.nh0815.jrgb.rgb;
+package com.github.nhirakawa.jrgb.rgb;
 
 /**
  * Created by Nick on 10/23/2015.

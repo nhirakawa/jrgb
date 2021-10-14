@@ -1,7 +1,13 @@
-package com.github.nh0815.jrgb.ui;
+package com.github.nhirakawa.jrgb.ui;
 
-import com.github.nh0815.jrgb.RgbConverter;
-import com.github.nh0815.jrgb.rgb.*;
+import com.github.nhirakawa.jrgb.RgbConverter;
+import com.github.nhirakawa.jrgb.rgb.BlueRGBStrategy;
+import com.github.nhirakawa.jrgb.rgb.EightBitRGBStrategy;
+import com.github.nhirakawa.jrgb.rgb.GreenRGBStrategy;
+import com.github.nhirakawa.jrgb.rgb.IdentityRGBStrategy;
+import com.github.nhirakawa.jrgb.rgb.InvertRGBStrategy;
+import com.github.nhirakawa.jrgb.rgb.RedRGBStrategy;
+import com.github.nhirakawa.jrgb.rgb.SepiaRGBStrategy;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;

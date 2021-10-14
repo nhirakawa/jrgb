@@ -1,4 +1,4 @@
-package com.github.nh0815.jrgb.ui;
+package com.github.nhirakawa.jrgb.ui;
 
 /**
  * Created by nick on 10/22/15.

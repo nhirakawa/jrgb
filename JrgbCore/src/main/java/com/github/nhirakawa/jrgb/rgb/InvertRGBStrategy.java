@@ -1,4 +1,4 @@
-package com.github.nh0815.jrgb.rgb;
+package com.github.nhirakawa.jrgb.rgb;
 
 import java.awt.*;
 

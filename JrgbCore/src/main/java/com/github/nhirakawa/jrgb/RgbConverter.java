@@ -1,7 +1,7 @@
-package com.github.nh0815.jrgb;
+package com.github.nhirakawa.jrgb;
 
-import com.github.nh0815.jrgb.rgb.IdentityRGBStrategy;
-import com.github.nh0815.jrgb.rgb.RGBStrategy;
+import com.github.nhirakawa.jrgb.rgb.IdentityRGBStrategy;
+import com.github.nhirakawa.jrgb.rgb.RGBStrategy;
 
 import java.awt.image.BufferedImage;
 
